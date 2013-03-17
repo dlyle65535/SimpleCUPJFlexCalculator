@@ -1,11 +1,12 @@
 package Example;
 
 import java_cup.runtime.*;
-import java.util.Vector;
+import java.util.List;
+import java.util.ArrayList;
 import java.io.InputStream;
 
 parser code {:
-        protected Vector<Integer> results = new Vector<Integer>();
+        protected List<Integer> results = new ArrayList<Integer>();
 
 	public static void main(String args[]) throws Exception {
 		SymbolFactory sf = new DefaultSymbolFactory();
@@ -13,7 +14,7 @@ parser code {:
 		else new Parser(new Scanner(new java.io.FileInputStream(args[0]),sf),sf).parse();
 	}
        
-        public static Vector<Integer> getResults(InputStream iStream) throws Exception {
+        public static List<Integer> getResults(InputStream iStream) throws Exception {
 		SymbolFactory sf = new DefaultSymbolFactory();
 		Parser p = new Parser(new Scanner(iStream,sf),sf);
 		
