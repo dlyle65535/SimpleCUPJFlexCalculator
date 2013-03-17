@@ -9,13 +9,13 @@ parser code {:
         protected List<Integer> results = new ArrayList<Integer>();
 
 	public static void main(String args[]) throws Exception {
-		SymbolFactory sf = new DefaultSymbolFactory();
+		SymbolFactory sf = new ComplexSymbolFactory();
 		if (args.length==0) new Parser(new Scanner(System.in,sf),sf).parse();
 		else new Parser(new Scanner(new java.io.FileInputStream(args[0]),sf),sf).parse();
 	}
        
         public static List<Integer> getResults(InputStream iStream) throws Exception {
-		SymbolFactory sf = new DefaultSymbolFactory();
+		SymbolFactory sf = new ComplexSymbolFactory();
 		Parser p = new Parser(new Scanner(iStream,sf),sf);
 		
 		Symbol s = p.parse();
